@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/ajax-blog.css">
+    <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Reenie+Beanie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/slicebox.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/custom.css"/>
+    <script type="text/javascript" src="JS/modernizr.custom.46884.js"></script>
+
+</head>
+<body>
+<h1>The Magnificent Moroccan Blog</h1>
+<div class="wrapper">
+
+    <ul id="sb-slider" class="sb-slider">
+        <li>
+            <img src="IMG/morocco1.jpg" alt="image1"/>
+        </li>
+        <li>
+            <img src="IMG/morocco2.jpg" alt="image2"/>
+        </li>
+        <li>
+            <img src="IMG/morocco3.jpg" alt="image3"/>
+        </li>
+        <li>
+            <img src="IMG/morocco4.jpg" alt="image4"/>
+        </li>
+        <li>
+            <img src="IMG/morocco5.jpg" alt="image5"/>
+        </li>
+        <li>
+            <img src="IMG/morocco6.jpg" alt="image6"/>
+        </li>
+        <li>
+            <img src="IMG/morocco7.jpg" alt="image7"/>
+        </li>
+        <li>
+            <img src="IMG/morocco8.jpg" alt="image6"/>
+        </li>
+
+    </ul>
+
+    <div id="shadow" class="shadow"></div>
+
+    <div id="nav-arrows" class="nav-arrows">
+        <a href="#">Next</a>
+        <a href="#">Previous</a>
+    </div>
+
+</div><!-- /wrapper -->
+
+<div id="container">
+    <div id="posts"></div>
+    <div id="addPosts"></div>
+
+    <p id="p_title">Create Your Own post.</p>
+    <form action="data/blog.json" method="post" class="blog">
+        <input type="text" name="title" placeholder="Enter the title to your post">
+        <input type="text" name="category" placeholder="Enter a category to your post">
+        <textarea name="content" id="styled" placeholder="Enter your post here..."></textarea><br><br>
+        <button class="btn btn-primary">Add post</button>
+    </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="JS/jquery.slicebox.js"></script>
+<script src="JS/blog_slicebox.js"></script>
+
+<script>
+    (function () {
+        "use strict";
+
+        //sending ajax request to pull data from JASON file
+        var blogContent = $.ajax({
+            url: "data/blog.json",
+            type: "POST"
+        });
+
+        blogContent.done(function (data) {
+            var content = [];
+            data.forEach(function (element) {
+                content += "<div><button class='btn btn-danger'>X</button>" + "<h3>" + element.title + "</h3>" + "<div class='time'>"+"Date: "+element.date+"</div>"
+                        + "<p class='p_one'>" + element.content + "</p>"
+                        + "<p class='p_two'>" + "<span>Category:</span>" + element.categories.join(", ") + "</p><hr class='style-seven'></div>"
+            });
+            $("#posts").html(content);
+        });
+
+        //getting all elements in the form with attribute name and retrieve their values
+        var arrayData = [];
+        var lastElementArrayDada;
+        $("form.blog").on('submit', function () {
+            var data = {};
+            $(this).find('[name]').each(function () {
+                var that = $(this);
+                var name = that.attr('name');
+                var value = that.val();
+                data[name] = value;
+            });
+
+            // push the data inside the arrayData
+            arrayData.push(data);
+            lastElementArrayDada = arrayData.pop();
+            arrayData.push(lastElementArrayDada);
+            console.log(arrayData);
+
+            //loop inside arrayData and append user input to the blog
+
+                $('#addPosts').append("<div><button class='btn btn-danger'>X</button>" + "<h3>" + lastElementArrayDada.title + "</h3>" + "<div class='time'>"+"Date: "+todaysDate()+"</div>"
+                        + "<p class='p_one'>" + lastElementArrayDada.content + "</p>"
+                        + "<p class='p_two'>" + "<span>Category:</span>" + lastElementArrayDada.category + "</p><hr class='style-seven'></div>");
+
+            //function to get today's date mm-dd-yyyy
+            function todaysDate() {
+                var d = new Date();
+                var month = d.getMonth() + 1;
+                var day = d.getDate();
+
+                var output = (month < 10 ? '0' : '') + month + "-"
+                        + (day < 10 ? '0' : '') + day + '-'
+                        + d.getFullYear();
+
+                return output;
+            }
+            //remove post by clicking remove button and splicing it from arrayData
+            $('.btn-danger').click(function () {
+                $(this).parent().remove();
+                var indexOfThis = arrayData.indexOf(this);
+                arrayData.splice(indexOfThis, 1);
+                console.log(arrayData);
+            });
+
+            return false
+        });
+
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+p, .time {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 2em;
+}
+h1 {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-size: 3em;
+    text-shadow: 2px 6px #070507;
+    font-weight: bolder;
+    text-align: center;
+    background-color: rgba(123, 10, 10, 0.64);;
+    padding: 40px;
+    margin-top: -20px;
+    color: floralwhite;
+    margin-bottom: 60px;
+}
+h3 {
+    font-family: 'Finger Paint', cursive;
+    font-size: 2em;
+}
+span {
+    color: #1924f5;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+}
+
+hr.style-seven {
+    height: 30px;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-seven:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+#p_title {
+    font-family: 'Patua One', cursive;
+}
+.p_two {
+    display: inline-block;
+    color: black;
+    background-color: #c3c3c3;
+    border-radius: 4px;
+}
+
+textarea {
+    width: 600px;
+    height: 120px;
+    border: 3px solid #000;
+    padding: 5px;
+    box-shadow: 6px 6px #717171;
+    color: black;
+}
+
+input {
+    width: 600px;
+    border: 3px solid #000;
+    padding: 5px;
+    box-shadow: 6px 6px #717171;
+    margin-bottom: 8px;
+    color: black;
+}
+.btn-danger {
+    float: right;
+    height: 35px ;
+    width: 35px;
+    border-radius: 35px;
+}
+#container {
+    text-align: justify;
+    width: 60%;
+    margin: auto;
+}
+.time {
+    text-decoration: underline;
+    color: #1924f5;
+}
+
+.btn-primary {
+    margin-bottom: 20px;
+}

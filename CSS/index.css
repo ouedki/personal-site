@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Keania+One');
+@import url('https://fonts.googleapis.com/css?family=Arbutus');
+
+html {
+    background: url(../IMG/solid.jpg) no-repeat;
+    background-size: cover;
+
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 400px;
+    height: 300px;
+
+}
+
+h1 {
+    background: rgba(0, 0, 0, 0.75);
+    color: rgb(194, 245, 10);
+    padding: 20px 60px;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 3em;
+    font-family: 'Arbutus', cursive;
+    margin-bottom: 0;
+
+}
+
+h3 {
+    background: rgba(245, 10, 10, 0.65);
+    color: rgb(16, 49, 234);
+    padding: 20px 60px;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: 'Arbutus', cursive;
+    margin-top: 5px;
+
+}
+
+.box {
+    border-radius: 20px;
+    width: 45%;
+    height: 45%;
+    margin: 5px;
+    display: inline-block;
+    float: left;
+    position: relative;
+    bottom:74px;
+    left: 8px;
+    box-shadow: #000000 1px 3px 3px 2px inset;
+
+}
+#red {
+    background: red;
+    border-bottom-right-radius: 100px ;
+    background-image: url(../IMG/red.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#green {
+    background: green;
+    border-top-right-radius: 100px;
+    background-image: url(../IMG/green.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#yellow {
+    background: yellow;
+    border-top-left-radius: 100px;
+    background-image: url(../IMG/yellow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#blue {
+    background: blue;
+    border-bottom-left-radius: 100px;
+    background-image: url(../IMG/blue.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+button#start {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    font-weight: bolder;
+    font-size: 1.2em;
+    position: relative;
+    bottom: 70px;
+    background: #222;
+    color: antiquewhite;
+    margin-top: 20px;
+
+}
+#container {
+    text-align: center;
+    min-width: 627px;
+}
+
+#round {
+    color: #373765;
+    font-size: 4em;
+    font-weight: bolder;
+    position: relative;
+    bottom: -105px;
+    left: -3px;
+    font-family: 'Keania One', cursive;
+    margin: 0;
+}
+
+.gameOver {
+    background-image: url(../IMG/gameover.gif);
+}
+
+fieldset#select {
+     width:100px;
+     height: 250px;
+     position: relative;
+     bottom: 285px;
+     left:20px;
+     background: #000;
+     color: antiquewhite;
+     font-weight: 900;
+     border-radius: 10px;
+ }
+
+
+.level {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    font-weight: 900;
+    background: red;
+    color: black;
+}
+#txt {
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    color: red;
+    font-weight: 900;
+    font-size: 1.1em;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+.dragon {
+    background: url(../IMG/dragon.gif) no-repeat;
+    background-size: contain;
+    width: 440px;
+    height: 440px;
+    display: inline;
+    position: absolute;
+    animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+}
+
+
+@keyframes moveX {
+    from { left: 0; } to { left: 480px; }
+}
+
+@keyframes moveY {
+    from { top: 0; } to { top: 280px; }
+}

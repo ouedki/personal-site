@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            border: 2px solid black;
+            width: 50px;
+            height: 50px;
+        }
+
+        .black {
+            background: black;
+        }
+    </style>
+    <script src="JS/jquery-2.2.4.js"></script>
+</head>
+<body>
+    <div id="container">
+        <table>
+            <tr>
+                <td class="tile" data-value="1">1</td>
+                <td class="tile" data-value="2">2</td>
+                <td class="tile" data-value="3">3</td>
+            </tr>
+            <tr>
+                <td class="tile" data-value="4">4</td>
+                <td class="tile" data-value="5">5</td>
+                <td class="tile" data-value="6">6</td>
+            </tr>
+            <tr>
+                <td class="tile" data-value="7">7</td>
+                <td class="tile" data-value="8">8</td>
+                <td class="tile" data-value="0">0</td>
+            </tr>
+        </table>
+        <button id="play">Play</button>
+
+    </div>
+    <script>
+        var sequenceArray = [1, 2, 3, 4, 5, 6, 7, 8, 0];
+        var tiles = document.getElementsByClassName('tile');
+        var random;
+        var arr = [];
+        var counter = 0;
+        console.log(arr);
+
+        //generate unique random numbers btw 0 and 8
+        var generateRandom = function(length) {
+            for(var i=0; i<length; i++) {
+                do
+                    random = Math.floor(Math.random() * (9));
+                while(arr.indexOf(random) !== -1);
+                arr[i] = random;
+            }
+            console.log(arr);
+            return arr;
+        };
+
+        //find the 0 square and change its background to black
+        var getEmptyBox = function () {
+            for(var i=0; i<tiles.length; i++) {
+
+                if (tiles[i].innerHTML==0){
+                    $(tiles[i]).addClass('black')
+                }
+            }
+        };
+
+        //click event listener to start the game
+        $('#play').click(function () {
+            $('.tile').removeClass('black');
+            arr = [];
+            generateRandom(9);
+            for (var i = 0; i<tiles.length; i++) {
+                $(tiles[i]).html(arr[i]);
+            }
+            getEmptyBox ();
+        });
+
+        console.log(tiles);
+        //
+        $('.tile').click(function () {
+            for(var i=0; i<tiles.length; i++) {
+                if (tiles[i].innerHTML==0){
+                    $(tiles[i]).removeClass('black');
+                    $(tiles[i]).html($(this).html())
+                }
+            }
+            $(this).text('0').addClass('black');
+            if (sequenceArray[counter]==(tiles[counter].innerHTML) && (sequenceArray.length==tiles.length)){
+                counter++;
+
+                if ((sequenceArray.length==counter)){
+                    alert('You WON!!!!');
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

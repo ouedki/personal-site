@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TiC Tac Toe</title>
+    <link rel="stylesheet" href="CSS/Tic_Tac_Toe.css">
+</head>
+<body onload="startGame()">
+    <h1>Welcome To My Tic-Tac-Toe</h1>
+    <div id="container">
+    <div id="message"></div>
+    <table>
+        <tr>
+            <td id="box1" class="box" onclick="nextMove(this)"></td>
+            <td id="box2" class="box" onclick="nextMove(this)"></td>
+            <td id="box3" class="box" onclick="nextMove(this)"></td>
+        </tr>
+        <tr>
+            <td id="box4" class="box" onclick="nextMove(this)"></td>
+            <td id="box5" class="box" onclick="nextMove(this)"></td>
+            <td id="box6" class="box" onclick="nextMove(this)"></td>
+        </tr>
+        <tr>
+            <td id="box7" class="box" onclick="nextMove(this)"></td>
+            <td id="box8" class="box" onclick="nextMove(this)"></td>
+            <td id="box9" class="box" onclick="nextMove(this)"></td>
+        </tr>
+    </table>
+        <br>
+    <div id="wrapper">
+    <button onclick="startGame()">Restart</button>
+    </div>
+    </div>
+    <script src="JS/Tic_Tac_Toe.js"></script>
+</body>
+</html>

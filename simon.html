@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Simon Game</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/animate.css">
+    <link rel="stylesheet" href="CSS/sweetalert.css">
+
+</head>
+<body>
+<div id="container">
+    <div>
+        <h1>Mario Says</h1><br>
+        <h3 id="displayScore" class="hide">Score: 0</h3>
+    </div>
+    <div id="wrapper">
+        <div id="round">0</div>
+        <div class="box" id="red" data-value ="1"></div>
+        <div class="box" id="blue" data-value ="2"></div>
+        <div class="box" id="green" data-value ="3"></div>
+        <div class="box" id="yellow" data-value ="4"></div>
+        <button id="start">Start</button>
+    </div>
+
+    <div>
+        <fieldset id="select">
+            <button class="level" id="easy">Easy</button>
+            <button class="level" id="medium">Medium</button>
+            <button class="level" id="hard">Hard</button>
+
+        </fieldset>
+    </div>
+    <div>
+        <audio id="hartBeat">
+            <source src="Audio/heartbeat-speeding-up-01.mp3">
+        </audio>
+        <audio id="game_over">
+            <source src="Audio/gameover.wav">
+        </audio>
+        <audio id="green_sound">
+            <source src="Audio/green.wav">
+        </audio>
+        <audio id="yellow_sound">
+            <source src="Audio/yellow.wav">
+        </audio>
+        <audio id="red_sound">
+            <source src="Audio/red.wav">
+        </audio>
+        <audio id="blue_sound">
+            <source src="Audio/blue.wav">
+    </audio>
+    </div>
+    <div class="dragon" style="display: none"></div>
+</div>
+
+<script src="JS/sweetalert.min.js"></script>
+<script src="JS/jquery-2.2.4.js"></script>
+<script src="JS/index.js"></script>
+</body>
+</html>
