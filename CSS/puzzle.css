@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Shojumaru');
+@import url('https://fonts.googleapis.com/css?family=Vast+Shadow');
+
+body {
+    background: url("../IMG/puzzlegame.jpg") no-repeat fixed;
+}
+
+#container {
+    text-align: center;
+
+}
+
+h1 {
+    background: yellow;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 4em;
+    font-family: 'Shojumaru', cursive;
+}
+
+td {
+    border: 10px solid black;
+    width: 110px;
+    height: 110px;
+    font-size: 5em;
+    text-align: center;
+    color: yellow;
+    font-family: 'Vast Shadow', cursive;
+}
+
+table {
+    margin:  20px auto;
+}
+
+.black {
+    background: black;
+    color: black;
+}
+
+button {
+    width: 130px;
+    height: 60px;
+    border-radius: 15px;
+    font-size: 2em;
+    background: black;
+    color: yellow;
+}
