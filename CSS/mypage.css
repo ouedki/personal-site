@@ -8,24 +8,18 @@ div#bgrweb {
     height: 800px;
 }
 
-div#aboutme-bgrd {
+div#general-bgrd {
     background-image: url(../img/silver.jpg);
-}
-
-div#timeline-bgrd {
-    background-image: url(../img/silver.jpg);
-    opacity: 0.8;
-}
-div#portfolio-bgrd {
-    background-image: url(../img/silver.jpg);
+    background-size: contain;
+    background-attachment: fixed;
 }
 
 .navbar-inverse .navbar-nav > li > a {
     color: black;
-    background-color: #c9c9c9;
+    background: silver;
     font-size: 19px;
-    border-left: 1px solid black;
-    opacity: 0.5;
+    border: 1px solid black;
+    opacity: 0.8;
 }
 
 #mainDiv {
@@ -62,36 +56,36 @@ div#portfolio-bgrd {
 
 #front {
     transform: translateZ(100px);
-    background-color: #74acb9;
+    background-color: rgba(122, 130, 132, 0.44);
 }
 
 #back {
     transform: rotateY(180deg) translateZ(200px);
-    background-color: #82d0ff;
+    background-color: rgba(122, 130, 132, 0.44);
 }
 
 #left {
     transform: rotateY(-90deg) translateX(-200px);
     transform-origin: left;
-    background-color: #82d0ff;
+    background-color: rgba(122, 130, 132, 0.44);
 }
 
 #right {
     transform: rotateY(90deg) translateX(200px);
     transform-origin: right;
-    background-color: #74acb9;
+    background-color: rgba(122, 130, 132, 0.44);
 }
 
 #top {
     transform: rotateX(-90deg) translateY(-100px);
     transform-origin: top;
-    background-color: #82d0ff;
+    background-color: rgba(122, 130, 132, 0.44);
 }
 
 #bottom {
     transform: rotateX(90deg) translateY(100px);
     transform-origin: bottom;
-    background-color: #74acb9;
+    background-color: rgba(122, 130, 132, 0.44);
 
 }
 
@@ -154,8 +148,6 @@ h3#wokExp {
 
 .timeline > li > .timeline-panel {
     width: calc(100% - 25px);
-    width: -moz-calc(100% - 25px);
-    width: -webkit-calc(100% - 25px);
     float: left;
     border: 1px solid #dcdcdc;
     background: #ffffff;
@@ -286,8 +278,6 @@ h3#wokExp {
 
     ul.timeline > li > .timeline-panel {
         width: calc(100% - 65px);
-        width: -moz-calc(100% - 65px);
-        width: -webkit-calc(100% - 65px);
     }
 
     ul.timeline > li > .timeline-badge {
@@ -338,85 +328,10 @@ hr.style-five:after { /* Not really supposed to work, but does */
     box-sizing: border-box;
 }
 
-div#contactme-bgrd {
-    background: #f1f1f1;
-    font-family: 'Merriweather', sans-serif;
-    padding: 1em;
-}
-
 h1#contatme {
     text-align: center;
     color: #a8a8a8;
     text-shadow: 1px 1px 0 white;
-}
-
-form {
-    max-width: 600px;
-    text-align: center;
-    margin: 20px auto;
-}
-
-form input, form textarea {
-    border: 0;
-    outline: 0;
-    padding: 1em;
-    border-radius: 8px;
-    display: block;
-    width: 100%;
-    margin-top: 1em;
-    font-family: 'Merriweather', sans-serif;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    resize: none;
-}
-
-form input:focus, form textarea:focus {
-    box-shadow: 0 0px 2px #e74c3c !important;
-}
-
-form #input-submit {
-    color: white;
-    background: #e74c3c;
-    cursor: pointer;
-}
-
-form #input-submit:hover {
-    box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
-}
-
-form textarea {
-    height: 126px;
-}
-
-.half {
-    float: left;
-    width: 48%;
-    margin-bottom: 1em;
-}
-
-.right {
-    width: 50%;
-}
-
-.left {
-    margin-right: 2%;
-}
-
-@media (max-width: 480px) {
-    .half {
-        width: 100%;
-        float: none;
-        margin-bottom: 0;
-    }
-}
-
-.cf:before,
-.cf:after {
-    content: " ";
-    display: table;
-}
-
-.cf:after {
-    clear: both;
 }
 
 hr.style-eight {
@@ -437,15 +352,6 @@ hr.style-eight:after {
     background: white;
 }
 
-div#contactme-bgrd {
-    background-image: url(../img/web.jpg);
-    opacity: 0.8;
-}
-
-h1#contatme {
-    color: #e74c3c;
-}
-
 #portfolio .portfolio-item {
     margin: 0 0 15px;
     right: 0;
@@ -459,14 +365,12 @@ h1#contatme {
 }
 
 #portfolio .portfolio-item .portfolio-link .caption {
-    background: rgba(24, 188, 156, 0.9);
+    background: rgba(64, 56, 56, 0.51);
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: all ease 0.5s;
-    -webkit-transition: all ease 0.5s;
-    -moz-transition: all ease 0.5s;
 }
 
 #portfolio .portfolio-item .portfolio-link .caption:hover {
@@ -604,4 +508,134 @@ a.socialIcon:hover, .socialHoverClass {
 #SM_footer {
    text-align: center;
     background: black;
+}
+
+div#contactme-bgrd  {
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #B6B6B6;
+}
+div#contactme-bgrd section {
+    background: white;
+    margin: 0px auto 120px;
+    border-top: 15px solid #313A3D;
+    text-align: center;
+    padding: 50px 0 110px;
+    width: 80%;
+    max-width: 1100px;
+}
+div#contactme-bgrd section h1 {
+    margin-bottom: 40px;
+    font-size: 4em;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+}
+
+form#contatme_form {
+    width: 58.33333%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+form#contatme_form .field {
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+}
+form#contatme_form .field label {
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #313A3D;
+    width: 100%;
+    padding: 18px 0;
+    font-size: 1.45em;
+    letter-spacing: 0.075em;
+    transition: all 333ms ease-in-out;
+}
+form#contatme_form .field label + span {
+    opacity: 0;
+    color: white;
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 7%;
+    font-size: 2.5em;
+    text-shadow: 1px 2px 0 #cd6302;
+    transition: all 333ms ease-in-out;
+}
+form#contatme_form .field input[type="text"],
+form#contatme_form .field textarea {
+    border: none;
+    background: #E8E9EA;
+    width: 100%;
+    margin: 0;
+    padding: 18px 0;
+    padding-left: 19.5%;
+    color: #313A3D;
+    font-size: 1.4em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+form#contatme_form .field input[type="text"]#msg,
+form#contatme_form .field textarea#msg {
+    height: 18px;
+    resize: none;
+
+    transition: all 333ms ease-in-out;
+}
+form#contatme_form .field input[type="text"]:focus, form#contatme_form .field input[type="text"].focused,
+form#contatme_form .field textarea:focus,
+form#contatme_form .field textarea.focused {
+    outline: none;
+}
+form#contatme_form .field input[type="text"]:focus#msg, form#contatme_form .field input[type="text"].focused#msg,
+form#contatme_form .field textarea:focus#msg,
+form#contatme_form .field textarea.focused#msg {
+    padding-bottom: 150px;
+}
+form#contatme_form .field input[type="text"]:focus + label, form#contatme_form .field input[type="text"].focused + label,
+form#contatme_form .field textarea:focus + label,
+form#contatme_form .field textarea.focused + label {
+    width: 18%;
+    background: #FD9638;
+    color: #313A3D;
+}
+form#contatme_form .field input[type="text"].focused + label,
+form#contatme_form .field textarea.focused + label {
+    color: #FD9638;
+}
+form#contatme_form .field:hover label {
+    width: 18%;
+    background: #313A3D;
+    color: white;
+}
+form#contatme_form button.button_send {
+    background: #FD9638;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    position: relative;
+    padding: 13px 50px;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    transition: all 333ms ease-in-out;
+    margin: 15px 0;
+}
+form#contatme_form button.button_send:hover {
+    background: #313A3D;
+    color: #FD9638;
+}
+form#contatme_form button.button_send:focus {
+    outline: none;
+    background: #cd6302;
+}
+#contatme_header {
+    text-align: center;
+    color: black;
 }

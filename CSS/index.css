@@ -4,6 +4,7 @@
 html {
     background: url(../IMG/solid.jpg) no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 
 }
 
