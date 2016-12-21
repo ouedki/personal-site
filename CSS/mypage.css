@@ -1,19 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Acme');
 
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+h2#abt-me {
+    text-align: center;
+}
+/*-------------------background images-------------------*/
 div#bgrweb {
-    background-image: url(../img/web.jpg);
-    background-attachment: fixed;
+    background: url(../img/web.jpg) no-repeat fixed;
     font-family: 'Acme', sans-serif;
     width: 100%;
     height: 800px;
 }
 
 div#general-bgrd {
-    background-image: url(../img/silver.jpg);
-    background-size: contain;
-    background-attachment: fixed;
+    background: url(../img/silver.jpg) no-repeat fixed ;
+
 }
 
+/*---------------------Nav Bar-----------------------*/
 .navbar-inverse .navbar-nav > li > a {
     color: black;
     background: silver;
@@ -22,6 +30,7 @@ div#general-bgrd {
     opacity: 0.8;
 }
 
+/*---------------------3D cube-----------------------*/
 #mainDiv {
     width: 250px;
     height: 250px;
@@ -98,6 +107,7 @@ div#general-bgrd {
     }
 }
 
+/*---------------------Work exp timeline-----------------------*/
 h3#wokExp {
     color: black;
 }
@@ -312,6 +322,7 @@ h3#wokExp {
     }
 }
 
+/*---------------------line breaks styling-----------------------*/
 hr.style-five {
     border: 0;
     height: 0; /* Firefox... */
@@ -320,18 +331,6 @@ hr.style-five {
 
 hr.style-five:after { /* Not really supposed to work, but does */
     content: "\00a0"; /* Prevent margin collapse */
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-}
-
-h1#contatme {
-    text-align: center;
-    color: #a8a8a8;
-    text-shadow: 1px 1px 0 white;
 }
 
 hr.style-eight {
@@ -352,6 +351,43 @@ hr.style-eight:after {
     background: white;
 }
 
+hr.star-primary {
+    padding: 0;
+    border: none;
+    border-top: solid 5px;
+    text-align: center;
+    max-width: 250px;
+    margin: 25px auto 30px;
+}
+hr.star-primary:after {
+    font-family: FontAwesome;
+    display: inline-block;
+    position: relative;
+    top: -0.8em;
+    font-size: 2em;
+    padding: 0 0.25em;
+}
+
+hr.star-primary {
+    border-color: #2C3E50;
+}
+
+hr.star-primary:after {
+    background-color: white;
+    color: #2C3E50;
+}
+
+hr.breakLine {
+    border: none;
+    height: 10px;
+    background: linear-gradient(-135deg, #fff 5px, transparent 0) 0 5px, linear-gradient(135deg, #fff 5px, #8c8c8c 0) 0 5px;
+    background-color: #9596a1;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-size: 3px 0px;
+}
+
+/*---------------------Portfolio display-----------------------*/
 #portfolio .portfolio-item {
     margin: 0 0 15px;
     right: 0;
@@ -406,44 +442,8 @@ hr.style-eight:after {
         margin: 0 0 30px;
     }
 }
-hr.star-primary {
-    padding: 0;
-    border: none;
-    border-top: solid 5px;
-    text-align: center;
-    max-width: 250px;
-    margin: 25px auto 30px;
-}
-hr.star-primary:after {
-    font-family: FontAwesome;
-    display: inline-block;
-    position: relative;
-    top: -0.8em;
-    font-size: 2em;
-    padding: 0 0.25em;
-}
 
-hr.star-primary {
-    border-color: #2C3E50;
-}
-hr.star-primary:after {
-    background-color: white;
-    color: #2C3E50;
-}
-h2#abt-me {
-    text-align: center;
-}
-hr.breakLine {
-    border: none;
-    height: 10px;
-    background: linear-gradient(-135deg, #fff 5px, transparent 0) 0 5px, linear-gradient(135deg, #fff 5px, #8c8c8c 0) 0 5px;
-    background-color: #9596a1;
-    background-position: left bottom;
-    background-repeat: repeat-x;
-    background-size: 3px 0px;
-}
-
-/* footer social icons */
+/*------------------footer social icons--------------------*/
 ul.social-network {
     list-style: none;
     display: inline;
@@ -510,6 +510,7 @@ a.socialIcon:hover, .socialHoverClass {
     background: black;
 }
 
+/*-----------------------------contact me form--------------------------*/
 div#contactme-bgrd  {
     font-size: 62.5%;
     font-family: 'Lato', sans-serif;
