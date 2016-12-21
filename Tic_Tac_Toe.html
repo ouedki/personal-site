@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>TiC Tac Toe</title>
     <link rel="stylesheet" href="CSS/Tic_Tac_Toe.css">
+    <link rel="stylesheet" href="CSS/animate.css">
 </head>
 <body onload="startGame()">
-    <h1>Welcome To My Tic-Tac-Toe</h1>
-    <div id="container">
+
+<div id="container">
+    <h1>Welcome To My Tic-Tac-Toe</h1><br>
     <div id="message"></div>
     <table>
         <tr>
@@ -26,11 +28,13 @@
             <td id="box9" class="box" onclick="nextMove(this)"></td>
         </tr>
     </table>
-        <br>
-    <div id="wrapper">
+    <br>
     <button onclick="startGame()">Restart</button>
+    <div id="wrapper">
+
     </div>
-    </div>
-    <script src="JS/Tic_Tac_Toe.js"></script>
+</div>
+<script src="JS/jquery-2.2.4.js"></script>
+<script src="JS/Tic_Tac_Toe.js"></script>
 </body>
 </html>

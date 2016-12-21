@@ -1,6 +1,8 @@
- var turn;
+
+    var turn;
     var winner;
 
+    //function to restart the game
     function startGame() {
         for (var i = 1; i <= 9; i++) {
             clearBox(i);
@@ -13,11 +15,12 @@
 
         setMessage(turn + " gets to start.")
     }
-
+    //function to display a message
     function setMessage(msg) {
         document.getElementById("message").innerHTML = msg
     }
 
+    //function to restrict turns to unused boxes and check if there is a winner already
     function nextMove(box) {
         if (winner != null) {
             setMessage(winner + " already won the game.")
@@ -29,9 +32,13 @@
         }
     }
 
+    //Function switch users turn and check if there is a winner already
     function switchTurn() {
         if (checkWinner(turn)) {
             setMessage("Congratulations, " + turn + "! You Win!");
+            $('div#message').addClass('animated rotateIn').one('oanimationend animationend', function () {
+                $(this).removeClass('animated rotateIn');
+            });
             winner = turn;
         } else if (turn == "X") {
             turn = "O";
@@ -42,6 +49,7 @@
         }
     }
 
+    //Function to set the ground for checking all possible winning combinations
     function checkCombinations(a, b, c, move) {
         var result = false;
         if (getBox(a) == move && getBox(b) == move && getBox(c) == move) {
@@ -50,10 +58,12 @@
         return result;
     }
 
+    //Function to retrieve the innerHTML of a given box
     function getBox(number) {
         return document.getElementById("box" + number).innerHTML;
     }
 
+    //function that defines all possible winning combinations and returns true if one of the combinations is met
     function checkWinner(move) {
         var res = false;
         if (checkCombinations(1, 2, 3, move) ||
@@ -69,6 +79,8 @@
         return res
     }
 
+    //a function that clears the innerHTML of a given box
     function clearBox(number) {
         return document.getElementById("box" + number).innerHTML = "";
     }
+

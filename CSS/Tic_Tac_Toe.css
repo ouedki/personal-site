@@ -1,16 +1,16 @@
 table, td {
-    border: 1px solid whitesmoke;
-    color: whitesmoke;
+    border: 5px solid black;
+    color: orangered;
 }
 .box {
-    width: 150px;
-    height:150px;
+    width: 120px;
+    height:120px;
     text-align: center;
     font-size: 5em;
     font-weight: bolder;
 }
 body {
-    background-image: url(../IMG/tictac.jpeg);
+    background: url(../IMG/tictac.jpg) no-repeat fixed;
     background-size: cover;
 }
 table {
@@ -18,17 +18,24 @@ table {
     margin-right: auto;
 }
 h1 {
-    color: red;
-    background-color: #a8a8a8;
+    color: #ff0000;
+    background-color: #000000;
     opacity: 0.8;
     border-radius: 30px;
-    text-align: center;
+    display: inline-block;
+    padding: 20px;
+    margin-bottom: 5px;
 }
 #message {
-    color: #26dfe5;
+    color: #030303;
     font-weight: bolder;
     font-size: 1.4em;
     text-align: center;
+    padding: 15px;
+    display: inline-block;
+    background: orangered;
+    border-radius: 8px;
+    margin-bottom: 5px;
 }
 button {
     height: 40px;
@@ -37,7 +44,16 @@ button {
     font-weight: bold;
     border-radius: 6px;
     text-align: center;
+    background: black;
+    color: orangered;
+}
+#container {
+    text-align: center;
+    width: 100%;
+
 }
 #wrapper {
     text-align: center;
+    width: 80%;
+
 }
