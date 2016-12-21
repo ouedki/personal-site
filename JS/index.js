@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
 //---------------------------Setting up global variables--------------------------------------------//
     var random;
     var sequenceArray = [];
@@ -27,6 +26,13 @@ $(document).ready(function () {
         }
     });
 
+//-------------------------------Animate h1 and difficulty level button----------------------------//
+    var animateDifficultyMode = function (timer, element) {
+        time = timer;
+        $('#select').addClass('animated rotateOutUpRight');
+        $('h1').text($(element).text() + " Mode").addClass('animated rotateIn');
+    };
+
 //---------------------------Display Msg to user with round level----------------------------------//
     var displayMsg = function (round) {
         $('#round').text(round)
@@ -51,19 +57,6 @@ $(document).ready(function () {
             }, (x * index));
         });
         activateClickOnSquare()
-    };
-
-//------------------------------------Moving to next round-----------------------------------------//
-    var newRound = function () {
-        playSound();
-        round += 1;
-        score += 1;
-        generateRandomNumber();
-        sequenceArray.push(random);
-        setTimeout(function () {
-            playSequence(time);
-        }, time / 3);
-        displayMsg(round);
     };
 
 //-------------------------Staring the game with a click event on the start game button------------//
@@ -93,17 +86,42 @@ $(document).ready(function () {
 
 //---------------------------------Click event on the animated boxes-------------------------------//
     $(".box").click(function () {
-            if (clickBox) {
-                playSoundSquareClicked();
-                wobbleSquares(this);
-                if (sequenceArray[i] == $(this).attr("data-value")) {
-                    i += 1;
-                    checkEndOfSequence();
-                } else {
-                    gameOver();
-                }
+        if (clickBox) {
+            playSoundSquareClicked();
+            wobbleSquares(this);
+            if (sequenceArray[i] == $(this).attr("data-value")) {
+                i += 1;
+                checkEndOfSequence();
+            } else {
+                gameOver();
             }
+        }
     });
+
+//-----------------------------------checking end of sequence--------------------------------------//
+    var checkEndOfSequence = function () {
+        if (i == sequenceArray.length) {
+            clickBox = false;
+            i = 0;
+            setTimeout(function () {
+                playSoundCorrectSequence();
+                newRound();
+            }, time);
+        }
+    };
+
+//------------------------------------Moving to next round-----------------------------------------//
+    var newRound = function () {
+        playSound();
+        round += 1;
+        score += 1;
+        generateRandomNumber();
+        sequenceArray.push(random);
+        setTimeout(function () {
+            playSequence(time);
+        }, time / 3);
+        displayMsg(round);
+    };
 
 //-----------------------------------------Rest the Game------------------------------------------//
     var resetGame = function () {
@@ -119,18 +137,6 @@ $(document).ready(function () {
 //-----------------------------------Showing the four box when game starts-------------------------//
     var showSquares = function () {
         $(".box").css("opacity", "1");
-    };
-
-//-----------------------------------checking end of sequence--------------------------------------//
-    var checkEndOfSequence = function () {
-        if (i == sequenceArray.length) {
-            clickBox = false;
-            i = 0;
-            setTimeout(function () {
-                playSoundCorrectSequence();
-                newRound();
-            }, time);
-        }
     };
 
 //----------------------------------------Game over------------------------------------------------//
@@ -149,11 +155,11 @@ $(document).ready(function () {
         $("#wrapper").addClass('gameOver');
     };
 
-//-------------Setting up the squares to non non-clickable while sequence is playing---------------//
+//----------------Setting up the squares to non-clickable while sequence is playing----------------//
     var activateClickOnSquare = function () {
         setTimeout(function () {
             clickBox = true;
-        }, (1000 * (sequenceArray.length)));
+        }, (time * (sequenceArray.length)));
     };
 
 //-------------------------Play sound while user is playing----------------------------------------//
@@ -188,14 +194,8 @@ $(document).ready(function () {
 //
 //     }
 
-//-------------------------------Animate h1 and difficulty level button----------------------------//
-    var animateDifficultyMode = function (timer, element) {
-        time = timer;
-        $('#select').addClass('animated rotateOutUpRight');
-        $('h1').text($(element).text() + " Mode").addClass('animated rotateIn');
-    };
 
-//-------------------------------wobble squares when clicked----------------------------//
+//---------------------------------wobble squares when clicked--------------------------------------//
     var wobbleSquares = function (square) {
         $(square).addClass('animated wobble');
         $(square).one('oanimationend animationend', function () {
@@ -214,7 +214,4 @@ $(document).ready(function () {
         });
 
     };
-//-----------------------------
-
-
 });
