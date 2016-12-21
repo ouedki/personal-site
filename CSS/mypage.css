@@ -25,8 +25,8 @@ div#general-bgrd {
 #mainDiv {
     width: 250px;
     height: 250px;
-    margin: 150px auto;
-    perspective: 600px;
+    margin: 50px auto;
+    perspective: 1000px;
 
 }
 
@@ -43,7 +43,7 @@ div#general-bgrd {
     height: 300px;
     opacity: 0.9;
     color: #14161a;
-    font-size: 50px;
+    font-size: 5em;
     text-align: center;
 }
 
